@@ -1,15 +1,22 @@
-nano requirements.txtimport os
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
 from telegram.ext import Application, CommandHandler, ContextTypes
+import os
 
 TOKEN = os.getenv("TOKEN")
 URL = "https://seyedalimoosavi369.github.io/traxex_miniapp/"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    keyboard = [[InlineKeyboardButton("🚀 Open TRAXEX", url=URL)]]
+    keyboard = [
+        [
+            InlineKeyboardButton(
+                "🚀 Open TRAXEX",
+                web_app=WebAppInfo(url=URL)
+            )
+        ]
+    ]
 
     await update.message.reply_text(
-        "⚡ TRAXEX BOT ACTIVE",
+        "⚡ TRAXEX PRO SYSTEM",
         reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
@@ -22,3 +29,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
