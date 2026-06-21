@@ -7,7 +7,7 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TOKEN = "8625621495:AAFGXWA1iJTpfpQWdTchzGpF6TBPhw7k2D8"
+TOKEN = os.environ.get("TOKEN", "8625621495:AAFGXWA1iJTpfpQWdTchzGpF6TBPhw7k2D8")
 MINIAPP_URL = "https://seyedalimoosavi369.github.io/traxex_miniapp/"
 DB_NAME = os.path.expanduser("~/traxex/traxex.db")
 
